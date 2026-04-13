@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunehra Basera | Home</title>
+    <style>
+        /* CSS SETTINGS */
+        :root {
+            --dark-azure: #132F47;
+            --orange: #E6900E;
+            --white: #F2F2F2;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: var(--white); color: var(--dark-azure); }
+        
+        /* Navigation Bar */
+        nav { background-color: var(--dark-azure); padding: 1rem; display: flex; justify-content: center; gap: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; }
+        nav a:hover { color: var(--orange); }
+
+        /* Hero Section */
+        .hero {
+            /* CHANGE 'banner.jpg' to your actual image file name */
+            background: linear-gradient(rgba(19, 47, 71, 0.6), rgba(19, 47, 71, 0.6)), url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 { font-size: 50px; margin-bottom: 10px; }
+        .hero p { font-size: 24px; font-style: italic; color: var(--orange); }
+
+        /* Content Area */
+        .content { padding: 50px; text-align: center; max-width: 800px; margin: auto; }
+        .btn { 
+            background-color: var(--orange); 
+            color: white; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 5px; 
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="https://www.facebook.com/profile.php?id=61575396851495" target="_blank">FACEBOOK</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Sunehra Basera</h1>
+        <p>Ghar bhi, Growth bhi</p>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to Sunehra Basera</h2>
+        <p>We provide the best real estate solutions for your dream home and future growth.</p>
+        <a href="contact.html" class="btn">ENQUIRE NOW</a>
+    </div>
+
+</body>
+</html>
