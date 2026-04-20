@@ -2,71 +2,172 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunehra Basera | Home</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        /* CSS SETTINGS */
-        :root {
-            --dark-azure: #132F47;
-            --orange: #E6900E;
-            --white: #F2F2F2;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: var(--white); color: var(--dark-azure); }
-        
-        /* Navigation Bar */
-        nav { background-color: var(--dark-azure); padding: 1rem; display: flex; justify-content: center; gap: 30px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; }
-        nav a:hover { color: var(--orange); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0B1D2E; color: #ffffff; overflow-x: hidden; }
 
-        /* Hero Section */
-        .hero {
-            /* CHANGE 'banner.jpg' to your actual image file name */
-            background: linear-gradient(rgba(19, 47, 71, 0.6), rgba(19, 47, 71, 0.6)), url('banner.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 450px;
+        /* --- SIDE NAVIGATION --- */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            background-color: #0B1D2E;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-right: 2px solid #E6900E;
+        }
+
+        .sidenav a {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #ffffff;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            color: white;
-            text-align: center;
+            transition: 0.3s;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .hero h1 { font-size: 50px; margin-bottom: 10px; }
-        .hero p { font-size: 24px; font-style: italic; color: var(--orange); }
 
-        /* Content Area */
-        .content { padding: 50px; text-align: center; max-width: 800px; margin: auto; }
-        .btn { 
-            background-color: var(--orange); 
-            color: white; 
-            padding: 15px 30px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 5px; 
+        .nav-icon {
+            width: 35px;
+            margin-right: 15px;
+            color: #E6900E;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .sidenav a:hover {
+            background: rgba(230, 144, 14, 0.15);
+            color: #E6900E;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        /* --- MENU BUTTON --- */
+        .menu-btn {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 1000;
+            background: #E6900E;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1;
+            filter: brightness(0.4);
+        }
+
+        .hero-content h1 { font-size: clamp(2.5rem, 8vw, 5rem); color: #E6900E; text-transform: uppercase; }
+        .hero-content p { font-size: 1.5rem; letter-spacing: 2px; margin-top: 10px; }
+
+        /* --- FOOTER (RESTORED) --- */
+        footer {
+            background: #071624;
+            padding: 50px 10%;
+            border-top: 1px solid rgba(230,144,14,0.3);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .footer-section h3 { color: #E6900E; margin-bottom: 15px; }
+        .fb-btn {
+            background: #1877F2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .fb-btn:hover { background: #145dbf; }
+        .copyright {
+            grid-column: 1/-1;
+            text-align: center;
+            padding-top: 30px;
+            color: #555;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="Index.html">HOME</a>
-        <a href="about.html">ABOUT US</a>
-        <a href="contact.html">CONTACT</a>
-        <a href="https://www.facebook.com/profile.php?id=61575396851495" target="_blank">FACEBOOK</a>
-    </nav>
-
-    <div class="hero">
-        <h1>Sunehra Basera</h1>
-        <p>Ghar bhi, Growth bhi</p>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home_page.html"><i class="fa-solid fa-house nav-icon"></i> Home</a>
+        <a href="about_us.html"><i class="fa-solid fa-circle-info nav-icon"></i> About Us</a>
+        <a href="gallery.html"><i class="fa-solid fa-images nav-icon"></i> Gallery</a>
+        <a href="mohali.html"><i class="fa-solid fa-location-dot nav-icon"></i> Mohali</a>
+        <a href="dholera.html"><i class="fa-solid fa-microchip nav-icon"></i> Dholera</a>
     </div>
 
-    <div class="content">
-        <h2>Welcome to Sunehra Basera</h2>
-        <p>We provide the best real estate solutions for your dream home and future growth.</p>
-        <a href="contact.html" class="btn">ENQUIRE NOW</a>
+    <div class="menu-btn" onclick="openNav()">
+        <i class="fa-solid fa-bars"></i> <span>MENU</span>
     </div>
 
+    <section class="hero">
+        <video autoplay muted loop id="hero-video"><source src="bg_video.mp4" type="video/mp4"></video>
+        <div class="hero-content">
+            <h1>SUNEHRA BASERA</h1>
+            <p>Ghar bhi, Growth bhi.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Sunehra Basera</h3>
+            <p>Premium real estate and high-growth investments.</p>
+            <a href="https://www.facebook.com/profile.php?id=61575396851495" target="_blank" class="fb-btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>+91 98729 94031</p>
+            <p>gauravgetwell@yahoo.co.in</p>
+        </div>
+        <div class="copyright">&copy; 2026 Sunehra Basera. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+        function openNav() { document.getElementById("mySidenav").style.width = "300px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+    </script>
 </body>
 </html>
