@@ -9,134 +9,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        /* --- CORE STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: #0B1D2E; color: #ffffff; overflow-x: hidden; }
+        body { background: #0B1D2E; color: #ffffff; overflow-x: hidden; line-height: 1.6; }
 
         /* --- SIDE NAVIGATION --- */
         .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            background-color: #0B1D2E;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
+            height: 100%; width: 0; position: fixed; z-index: 9999; top: 0; left: 0;
+            background-color: #0B1D2E; overflow-x: hidden; transition: 0.5s; padding-top: 60px;
             border-right: 2px solid #E6900E;
         }
-
         .sidenav a {
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            transition: 0.3s;
-            white-space: nowrap;
+            padding: 15px 30px; text-decoration: none; font-size: 1.1rem; color: #ffffff;
+            display: flex; align-items: center; transition: 0.3s; white-space: nowrap;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .nav-icon {
-            width: 35px;
-            margin-right: 15px;
-            color: #E6900E;
-            text-align: center;
-            font-size: 1.3rem;
-        }
-
-        .sidenav a:hover {
-            background: rgba(230, 144, 14, 0.15);
-            color: #E6900E;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            font-size: 36px;
-            cursor: pointer;
-        }
+        .nav-icon { width: 35px; margin-right: 15px; color: #E6900E; text-align: center; font-size: 1.2rem; }
+        .sidenav a:hover { background: rgba(230, 144, 14, 0.15); color: #E6900E; }
+        .sidenav .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; cursor: pointer; }
 
         /* --- MENU BUTTON --- */
         .menu-btn {
-            position: fixed;
-            top: 25px;
-            left: 25px;
-            z-index: 1000;
-            background: #E6900E;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
+            position: fixed; top: 25px; left: 25px; z-index: 1000; background: #E6900E;
+            color: white; padding: 12px 22px; border-radius: 8px; cursor: pointer;
+            font-weight: 700; display: flex; align-items: center; gap: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative;
         }
-
         #hero-video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: -1;
-            filter: brightness(0.4);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1; filter: brightness(0.4);
         }
+        .hero-content h1 { font-size: clamp(2.5rem, 8vw, 5rem); color: #E6900E; text-transform: uppercase; font-weight: 700; letter-spacing: 4px; }
+        .hero-content p { font-size: 1.5rem; letter-spacing: 3px; margin-top: 10px; font-weight: 300; }
 
-        .hero-content h1 { font-size: clamp(2.5rem, 8vw, 5rem); color: #E6900E; text-transform: uppercase; }
-        .hero-content p { font-size: 1.5rem; letter-spacing: 2px; margin-top: 10px; }
-
-        /* --- FOOTER (RESTORED) --- */
+        /* --- FOOTER --- */
         footer {
-            background: #071624;
-            padding: 50px 10%;
-            border-top: 1px solid rgba(230,144,14,0.3);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            background: #071624; padding: 60 -px 5%; border-top: 1px solid rgba(230, 144, 14, 0.3);
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;
         }
-        .footer-section h3 { color: #E6900E; margin-bottom: 15px; }
+        .footer-section { padding: 40px 20px; }
+        .footer-section h3 { color: #E6900E; margin-bottom: 20px; font-size: 1.5rem; }
         .fb-btn {
-            background: #1877F2;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            transition: 0.3s;
+            background: #1877F2; color: white; padding: 12px 25px; border-radius: 8px;
+            text-decoration: none; display: inline-flex; align-items: center;
+            font-weight: 600; margin-top: 15px; transition: 0.3s;
         }
-        .fb-btn:hover { background: #145dbf; }
-        .copyright {
-            grid-column: 1/-1;
-            text-align: center;
-            padding-top: 30px;
-            color: #555;
-            font-size: 0.8rem;
-        }
+        .copyright { width: 100%; grid-column: 1 / -1; text-align: center; margin-bottom: 20px; color: #5c6c7b; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
     </style>
 </head>
 <body>
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="home_page.html"><i class="fa-solid fa-house nav-icon"></i> Home</a>
+        <a href="index.html" style="color: #E6900E;"><i class="fa-solid fa-house nav-icon"></i> Home</a>
         <a href="about_us.html"><i class="fa-solid fa-circle-info nav-icon"></i> About Us</a>
-        <a href="gallery.html"><i class="fa-solid fa-images nav-icon"></i> Gallery</a>
-        <a href="mohali.html"><i class="fa-solid fa-location-dot nav-icon"></i> Mohali</a>
+        
+        <div style="padding: 20px 30px 5px; color: rgba(230,144,14,0.6); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">LOCATIONS</div>
+        <a href="mohali.html"><i class="fa-solid fa-plane nav-icon"></i> Mohali</a>
+        <a href="zirakpur.html"><i class="fa-solid fa-shop nav-icon"></i> Zirakpur</a>
         <a href="dholera.html"><i class="fa-solid fa-microchip nav-icon"></i> Dholera</a>
+        <a href="banur.html"><i class="fa-solid fa-leaf nav-icon"></i> Banur</a>
+        <a href="rajpura.html"><i class="fa-solid fa-building nav-icon"></i> Rajpura</a>
     </div>
 
     <div class="menu-btn" onclick="openNav()">
@@ -144,7 +83,9 @@
     </div>
 
     <section class="hero">
-        <video autoplay muted loop id="hero-video"><source src="bg_video.mp4" type="video/mp4"></video>
+        <video autoplay muted loop id="hero-video">
+            <source src="bg_video.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <h1>SUNEHRA BASERA</h1>
             <p>Ghar bhi, Growth bhi.</p>
@@ -154,15 +95,20 @@
     <footer>
         <div class="footer-section">
             <h3>Sunehra Basera</h3>
-            <p>Premium real estate and high-growth investments.</p>
-            <a href="https://www.facebook.com/profile.php?id=61575396851495" target="_blank" class="fb-btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <p>Your trusted partner in finding premium real estate and high-growth investment opportunities across Punjab and Gujarat.</p>
+            <a href="https://www.facebook.com/profile.php?id=61575396851495" target="_blank" class="fb-btn">
+                <i class="fa-brands fa-facebook-f"></i> &nbsp; Follow us on Facebook
+            </a>
         </div>
         <div class="footer-section">
-            <h3>Contact</h3>
-            <p>+91 98729 94031</p>
-            <p>gauravgetwell@yahoo.co.in</p>
+            <h3>Contact Us</h3>
+            <p><i class="fa-solid fa-location-dot" style="color:#E6900E; width: 25px;"></i> Mohali Headquarters, Punjab, India</p>
+            <p><i class="fa-solid fa-phone" style="color:#E6900E; width: 25px;"></i> +91 98729 94031</p>
+            <p><i class="fa-solid fa-envelope" style="color:#E6900E; width: 25px;"></i> gauravgetwell@yahoo.co.in</p>
         </div>
-        <div class="copyright">&copy; 2026 Sunehra Basera. All Rights Reserved.</div>
+        <div class="copyright">
+            &copy; 2026 Sunehra Basera. All Rights Reserved. Designed for Growth.
+        </div>
     </footer>
 
     <script>
