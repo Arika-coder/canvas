@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohali Projects | Sunehra Basera</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- CORE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0B1D2E; color: #ffffff; overflow-x: hidden; line-height: 1.6; }
+
+        /* --- SIDE NAVIGATION (Gallery Removed) --- */
+        .sidenav {
+            height: 100%; width: 0; position: fixed; z-index: 9999; top: 0; left: 0;
+            background-color: #0B1D2E; overflow-x: hidden; transition: 0.5s; padding-top: 60px;
+            border-right: 2px solid #E6900E;
+        }
+        .sidenav a {
+            padding: 15px 30px; text-decoration: none; font-size: 1.1rem; color: #ffffff;
+            display: flex; align-items: center; transition: 0.3s; white-space: nowrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .nav-icon { width: 35px; margin-right: 15px; color: #E6900E; text-align: center; font-size: 1.2rem; }
+        .sidenav a:hover { background: rgba(230, 144, 14, 0.15); color: #E6900E; }
+        .sidenav .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; cursor: pointer; }
+
+        /* --- NAVIGATION BUTTONS --- */
+        .menu-btn {
+            position: fixed; top: 25px; left: 25px; z-index: 1000; background: #E6900E;
+            color: white; padding: 12px 22px; border-radius: 8px; cursor: pointer;
+            font-weight: 700; display: flex; align-items: center; gap: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .home-btn {
+            position: fixed; top: 25px; right: 25px; z-index: 1000;
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            color: white; padding: 12px 22px; border-radius: 8px;
+            text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s; display: flex; align-items: center;
+        }
+        .home-btn:hover { background: #E6900E; border-color: #E6900E; }
+        .home-btn i { margin-right: 12px; }
+
+        /* --- CITY HERO --- */
+        .city-hero {
+            height: 60vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; 
+            background: linear-gradient(rgba(11, 29, 46, 0.6), rgba(11, 29, 46, 0.9)), 
+            url('https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover; background-position: center; padding-top: 80px;
+        }
+        .city-hero h1 { font-size: 5rem; color: #E6900E; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; }
+
+        /* --- CONTENT SECTION --- */
+        .content-container { padding: 60px 10%; max-width: 1400px; margin: 0 auto; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: -100px; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px;
+            padding: 40px; transition: 0.4s;
+        }
+        .glass-card:hover { transform: translateY(-10px); border-color: #E6900E; }
+        .highlight { color: #E6900E; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; display: block; }
+        
+        .spec-list { list-style: none; margin-top: 20px; }
+        .spec-list li { margin-bottom: 12px; display: flex; align-items: center; font-size: 0.95rem; }
+        .spec-list li i { color: #E6900E; margin-right: 12px; font-size: 1.1rem; }
+
+        .cta-box {
+            background: linear-gradient(135deg, #E6900E 0%, #ffaa2b 100%);
+            border-radius: 30px; padding: 50px; text-align: center; margin-top: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .cta-box h2 { font-size: 2rem; margin-bottom: 15px; color: #0B1D2E; }
+        .btn-dark {
+            background: #0B1D2E; color: #E6900E; padding: 15px 40px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block;
+            transition: 0.3s; margin-top: 15px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #071624; padding: 60px 5%; border-top: 1px solid rgba(230, 144, 14, 0.3);
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 80px;
+        }
+        .footer-section h3 { color: #E6900E; margin-bottom: 20px; font-size: 1.5rem; }
+        .fb-btn {
+            background: #1877F2; color: white; padding: 12px 25px; border-radius: 8px;
+            text-decoration: none; display: inline-flex; align-items: center;
+            font-weight: 600; margin-top: 15px; transition: 0.3s;
+        }
+        .copyright { width: 100%; grid-column: 1 / -1; text-align: center; margin-top: 40px; color: #5c6c7b; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home_page.html"><i class="fa-solid fa-house nav-icon"></i> Home</a>
+        <a href="about_us.html"><i class="fa-solid fa-circle-info nav-icon"></i> About Us</a>
+        <div style="padding: 20px 30px 5px; color: rgba(230,144,14,0.6); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">LOCATIONS</div>
+        <a href="mohali.html" style="color: #E6900E;"><i class="fa-solid fa-plane nav-icon"></i> Mohali</a>
+        <a href="zirakpur.html"><i class="fa-solid fa-shop nav-icon"></i> Zirakpur</a>
+        <a href="dholera.html"><i class="fa-solid fa-microchip nav-icon"></i> Dholera</a>
+        <a href="banur.html"><i class="fa-solid fa-leaf nav-icon"></i> Banur</a>
+        <a href="rajpura.html"><i class="fa-solid fa-building nav-icon"></i> Rajpura</a>
+    </div>
+
+    <div class="menu-btn" onclick="openNav()"><i class="fa-solid fa-bars"></i> <span>MENU</span></div>
+    <a href="home_page.html" class="home-btn"><i class="fa-solid fa-house"></i> HOME</a>
+
+    <section class="city-hero">
+        <div class="hero-content">
+            <h1>Mohali</h1>
+            <p style="color: #E6900E; font-size: 1.2rem; font-weight: 600; letter-spacing: 2px;">The International Gateway</p>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <div class="info-grid">
+            <div class="glass-card">
+                <span class="highlight">Prime Connectivity</span>
+                <p>Strategically located plots near the Mohali International Airport, offering unmatched accessibility for global travelers and local professionals.</p>
+                <ul class="spec-list">
+                    <li><i class="fa-solid fa-plane-up"></i> 5 Mins from Airport</li>
+                    <li><i class="fa-solid fa-road"></i> Direct PR7 Road Access</li>
+                    <li><i class="fa-solid fa-building-columns"></i> Near IT City Hub</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <span class="highlight">Luxury Living</span>
+                <p>Designed for those who seek an elite lifestyle. Our Mohali projects feature low-density planning and vast green belts.</p>
+                <ul class="spec-list">
+                    <li><i class="fa-solid fa-tree"></i> 40% Green Area</li>
+                    <li><i class="fa-solid fa-shield-check"></i> Gated Community</li>
+                    <li><i class="fa-solid fa-droplet"></i> 24/7 Water Supply</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass-card" style="margin-top: 40px;">
+            <h2 style="color: #E6900E; margin-bottom: 20px;">Why Invest in Mohali?</h2>
+            <p>Mohali is rapidly becoming the most preferred residential and commercial destination in the North. With massive government investment in the <strong>Aero City</strong> and <strong>IT City</strong> projects, land prices here are projected to appreciate significantly. Sunehra Basera offers exclusive inventory ensuring your investment is at the heart of the growth.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Ready to secure your plot in Mohali?</h2>
+            <p style="color: #0B1D2E;">Limited premium inventory available. Connect with our expert today.</p>
+            <a href="https://wa.me/919872994031" class="btn-dark">Enquire Now on WhatsApp</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Sunehra Basera</h3>
+            <p>Your trusted partner in finding premium real estate and high-growth investment opportunities.</p>
+            <a href="https://www.facebook.com/profile.php?id=61575396851495" target="_blank" class="fb-btn">
+                <i class="fa-brands fa-facebook-f"></i> &nbsp; Follow us on Facebook
+            </a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="fa-solid fa-location-dot" style="color:#E6900E; width: 25px;"></i> Mohali Headquarters, Punjab, India</p>
+            <p><i class="fa-solid fa-phone" style="color:#E6900E; width: 25px;"></i> +91 98729 94031</p>
+            <p><i class="fa-solid fa-envelope" style="color:#E6900E; width: 25px;"></i> gauravgetwell@yahoo.co.in</p>
+        </div>
+        <div class="copyright">&copy; 2026 Sunehra Basera. All Rights Reserved. Designed for Growth.</div>
+    </footer>
+
+    <script>
+        function openNav() { document.getElementById("mySidenav").style.width = "300px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+    </script>
+</body>
+</html>
